@@ -33,28 +33,28 @@
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script>
 
-		$(document).ready(function () {
-			$('#submit-button').click(function () {
-				var strsubject = $('#name').val();
-				var strmessage = 'Your Message: ' + $('#name').val();
+$(document).ready(function () {
+  $('#submit-button').click(function () {
+    var strsubject = $('#name').val();
+    var strmessage = 'Your Message: ' + $('#name').val();
 
-				$.ajax({
-					url: 'mailhandler.ashx',
-					type: 'POST',
-					data: {
-						mailto: 'nosend@email.com',
-						mailfrom: 'noreply@email.com',
-						mailsubject: strsubject,
-						mailmessage: strmessage
-					},
-					success: function (data) {
-						alert(data);
-					}
-				});
-				$('#submit').attr("disabled", true);
-			});
+      $.ajax({
+	url: 'mailhandler.ashx',
+	type: 'POST',
+	data: {
+		mailto: 'nosend@email.com',
+		mailfrom: 'noreply@email.com',
+		mailsubject: strsubject,
+		mailmessage: strmessage
+	},
+	success: function (data) {
+		alert(data);
+	}
+});
+	$('#submit').attr("disabled", true);
+});
 
-		});
+});
 
 	</script> 
 </body>
